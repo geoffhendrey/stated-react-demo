@@ -61,6 +61,7 @@ export default App;
 ```
 
 5. **Note** Some users need to disable ignore list in chrome devtools settings. If you chrome debugger does not step into TemplateProcessor code in the next step, you may need to [Disable custom scripts ignore list](https://developer.chrome.com/docs/devtools/settings/ignore-list#custom-ignore-pattern).
+![Disable custom scripts ignore list](https://raw.githubusercontent.com/zhirafovod/shtuff/main/images/disable-custom-scripts-ignore-list.jpg)
 
 6. Place a breakpoint on this line of App.js and RELOAD (CTRL-R), and you will enter stated-js'
 `TemplateProcessor.initialize()` method. You can then step line by line through the typescript
