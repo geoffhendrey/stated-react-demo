@@ -65,3 +65,22 @@ export default App;
 ```js
     tp.initialize().then(() => {
 ```
+## Enabling sourcemaps
+Chrome can step into source if the webpack bundle provides instruction to include sourcemaps. Please see
+[webpack.config.js](https://github.com/geoffhendrey/stated-react-demo/blob/main/webpack.config.js). When 
+you are building an app the includes stated-js, you can use the same technique in your
+own `webpack.congif.js`
+1. use devtool to generate source maps for *your* project code
+```js
+   
+    devtool: 'source-map', // This option outputs a source map for better debugging
+   ```
+2.  use `source-map-loader` to transitively include the source maps that are part of the `stated-js` project.
+This project uses bundle.mjs from stated. But if you use the common js bundle from stated (`bundle-common-js.cjs`) 
+```js
+{
+                test: /\/node_modules\/stated-js\/dist\/bundle\.mjs$/,
+                use: ["source-map-loader"],
+                enforce: "pre",
+            }
+```   
