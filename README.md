@@ -1,6 +1,6 @@
 # 'stated-react-demo': a demonstration of sourcemap debugging with stated-js
 ![debugging](https://raw.githubusercontent.com/geoffhendrey/jsonataplay/main/debug-stated-screenshot.png)
-This app teachesw ow to webpack an application, which uses state-js, so you can step into stated-js's sourcecode from the chrome debugger
+This app demonstrates how to webpack an application, which uses state-js, so you can step into stated-js's sourcecode from the chrome debugger
 
 1. clone this repo (https://github.com/geoffhendrey/stated-react-demo)
 ```shell
@@ -60,7 +60,9 @@ function App() {
 export default App;
 ```
 
-5. Place a breakpoint on this line of App.js and RELOAD (CTRL-R), and you will enter stated-js'
+5. **Note** Some users need to disable ignore list in chrome devtools settings. If you chrome debugger does not step into TemplateProcessor code in the next step, you may need to [Disable custom scripts ignore list](https://developer.chrome.com/docs/devtools/settings/ignore-list#custom-ignore-pattern).
+
+6. Place a breakpoint on this line of App.js and RELOAD (CTRL-R), and you will enter stated-js'
 `TemplateProcessor.initialize()` method. You can then step line by line through the typescript
 ```js
     tp.initialize().then(() => {
