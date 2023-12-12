@@ -13,7 +13,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "stated-js": "^0.0.97"
+    "stated-js": "^0.0.98"
   },
   "devDependencies": {
     "@babel/core": "^7.23.5",
