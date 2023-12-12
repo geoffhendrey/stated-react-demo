@@ -7,7 +7,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
     },
-    devtool: 'inline-source-map', // This option outputs a source map for better debugging
+    devtool: 'source-map', // This option outputs a source map for better debugging
     module: {
         rules: [
             {
@@ -17,29 +17,12 @@ module.exports = {
                     loader: 'babel-loader',
                 },
             },
-            // Process source maps in third-party libraries
-            {
-                test: /\.js$/,
-                use: ["source-map-loader"],
-                enforce: "pre",
-                exclude: /node_modules/ // Exclude all of node_modules
-            },
-            {
-                test: /\.tsx?$/, // or /\.jsx?$/ if you are using JSX
-                use: 'ts-loader',
-                exclude: /node_modules/,
-            },
-            {
-                test: /\.ts$/,
-                use: ["source-map-loader"],
-                enforce: "pre",
-            },
             //THIS IS WHERE WE PROCESS THE SOURCE MAP FOR STATED's bundle.mjs
             {
-                test: /bundle\.mjs$/,
+                test: /\/node_modules\/stated-js\/dist\/bundle\.mjs$/,
                 use: ["source-map-loader"],
                 enforce: "pre",
-            },
+            }
 
         ],
     },
